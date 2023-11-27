@@ -1,0 +1,184 @@
+2_150_mult_dropout_voiced_unvoiced_bis
+
+DATASET train 
+Data augmentation: on. 
+
+Input params/info: 
+   sampling frequency of inputs : 31.25 Hz 
+   sample length : 320 (initial sample length : 163840, step : 256, stride : 2) 
+   sample duration : 10.24 s 
+   batch size : 512 
+   num slices by example: 10 (num timesteps by slices: 32) 
+WARNING ; some languages in the dataset are not considered by the model 
+  languages (total: 21) 
+    0: Danish
+    1: Dutch
+    2: English
+    3: Finnish
+    4: French
+    5: German
+    6: Hungarian
+    7: Italian
+    8: Japanese
+    9: Korean
+    10: Mandarin
+    11: Polish
+    12: Portuguese
+    13: Russian
+    14: Spanish
+    15: Swedish
+    16: Turkish
+    17: Estonian
+    18: Arabic
+    19: Basque
+    20: Catalan
+   (Sub)folders: ['fold_0/', 'fold_1/', 'fold_2/'] 
+   Total number of examples - train - : 410880 (802 batchs) 
+   Per language : 
+     Danish : 5216 (1.27 %) 
+    Dutch : 8400 (2.04 %) 
+    English : 61936 (15.07 %) 
+    Finnish : 7248 (1.76 %) 
+    French : 52096 (12.68 %) 
+    German : 69824 (16.99 %) 
+    Hungarian : 2352 (0.57 %) 
+    Italian : 28064 (6.83 %) 
+    Japanese : 2720 (0.66 %) 
+    Korean : 10192 (2.48 %) 
+    Mandarin : 11952 (2.91 %) 
+    Polish : 5456 (1.33 %) 
+    Portuguese : 11888 (2.89 %) 
+    Russian : 12048 (2.93 %) 
+    Spanish : 40864 (9.95 %) 
+    Swedish : 8976 (2.18 %) 
+    Turkish : 3920 (0.95 %) 
+    Estonian : 2752 (0.67 %) 
+    Arabic : 4160 (1.01 %) 
+    Basque : 14864 (3.62 %) 
+    Catalan : 45952 (11.18 %) 
+F0 takes only 2 values (0:unvoiced/1:voiced)
+   input depth (nb features) : 3 x2 (using deltas) = 6 
+Global weights for each language : 
+ weight for language Danish : 0.784 
+weight for language Dutch : 0.966 
+weight for language English : 0.997 
+weight for language Finnish : 0.854 
+weight for language French : 0.996 
+weight for language German : 0.996 
+weight for language Hungarian : 0.777 
+weight for language Italian : 0.990 
+weight for language Japanese : 0.785 
+weight for language Korean : 0.870 
+weight for language Mandarin : 0.975 
+weight for language Polish : 0.829 
+weight for language Portuguese : 0.952 
+weight for language Russian : 0.972 
+weight for language Spanish : 0.995 
+weight for language Swedish : 0.879 
+weight for language Turkish : 0.941 
+weight for language Estonian : 0.931 
+weight for language Arabic : 0.894 
+weight for language Basque : 0.974 
+weight for language Catalan : 0.994 
+
+Model: "model"
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            [(512, 32, 6)]       0                                            
+__________________________________________________________________________________________________
+lstm_1 (LSTM)                   (512, 32, 150)       94200       input_1[0][0]                    
+__________________________________________________________________________________________________
+lstm_2 (LSTM)                   (512, 32, 150)       180600      lstm_1[0][0]                     
+__________________________________________________________________________________________________
+dropout (Dropout)               (512, 32, 150)       0           lstm_2[0][0]                     
+__________________________________________________________________________________________________
+time_distributed (TimeDistribut (512, 32, 21)        3171        dropout[0][0]                    
+__________________________________________________________________________________________________
+input_2 (InputLayer)            [(None, 1)]          0                                            
+__________________________________________________________________________________________________
+input_3 (InputLayer)            [(None, 1)]          0                                            
+__________________________________________________________________________________________________
+softmax (Softmax)               (512, 32, 21)        0           time_distributed[0][0]           
+==================================================================================================
+Total params: 277,971
+Trainable params: 277,971
+Non-trainable params: 0
+__________________________________________________________________________________________________
+config: 
+ batch_size: 512
+ num_steps: 32
+ keep_prob: 0.9
+ keep_prob_recurrent: 0.9
+ keep_prob_dense_layer: 0.8
+ hidden_size: 150
+ num_layers: 2
+ kernel_regularizer_l2: 0
+ recurrent_regularizer_l2: 0
+ cell_type: 1
+
+DATASET test 
+  for evaluation only (test/validation set) 
+Data augmentation: off.
+
+Input params/info: 
+   sampling frequency of inputs : 31.25 Hz 
+   sample length : 320 (initial sample length : 163840, step : 256, stride : 2) 
+   sample duration : 10.24 s 
+   batch size : 512 
+   num slices by example: 10 (num timesteps by slices: 32) 
+Autodetect languages 
+WARNING ; some languages in the dataset are not considered by the model 
+  languages (total: 23) 
+    0: Italian
+    1: Korean
+    2: Spanish
+    3: French
+    4: Estonian
+    5: Polish
+    6: Swedish
+    7: German
+    8: Mandarin
+    9: Japanese
+    10: Russian
+    11: Basque
+    12: Czech
+    13: Arabic
+    14: Turkish
+    15: Finnish
+    16: Danish
+    17: Dutch
+    18: English
+    19: Romanian
+    20: Portuguese
+    21: Catalan
+    22: Hungarian
+   (Sub)folders: ['fold_3/', 'fold_4/'] 
+   Total number of examples - test - : 35088 (68 batchs) 
+   Per language : 
+     Italian : 2352 (6.70 %) 
+    Korean : 704 (2.01 %) 
+    Spanish : 2720 (7.75 %) 
+    French : 2720 (7.75 %) 
+    Estonian : 768 (2.19 %) 
+    Polish : 1376 (3.92 %) 
+    Swedish : 1344 (3.83 %) 
+    German : 2544 (7.25 %) 
+    Mandarin : 2048 (5.84 %) 
+    Japanese : 1136 (3.24 %) 
+    Russian : 2832 (8.07 %) 
+    Basque : 736 (2.10 %) 
+    Czech : 112 (0.32 %) 
+    Arabic : 1360 (3.88 %) 
+    Turkish : 1456 (4.15 %) 
+    Finnish : 1072 (3.06 %) 
+    Danish : 832 (2.37 %) 
+    Dutch : 2240 (6.38 %) 
+    English : 2576 (7.34 %) 
+    Romanian : 640 (1.82 %) 
+    Portuguese : 2224 (6.34 %) 
+    Catalan : 624 (1.78 %) 
+    Hungarian : 672 (1.92 %) 
+F0 takes only 2 values (0:unvoiced/1:voiced)
+   input depth (nb features) : 3 x2 (using deltas) = 6 
+

@@ -1,0 +1,56 @@
+deltV
+lstm_2, cell_states, 49		 0.3689776597306671
+lstm_2, cell_states, 36		 0.3680320013286456
+lstm_2, outputs, 88		 0.34628539126637936
+lstm_2, outputs, 51		 0.34383809066805654
+lstm_2, cell_states, 51		 0.34095421487203703
+
+
+deltC
+lstm_1, outputs, 3		 0.4534718509891723
+lstm_1, cell_states, 3		 0.4506392162252305
+lstm_1, cell_states, 51		 0.36374490379362534
+lstm_1, outputs, 51		 0.3333297666505066
+lstm_2, cell_states, 126		 0.32234809249489815
+
+
+propV
+lstm_2, cell_states, 35		 0.5159651733009365
+lstm_2, outputs, 35		 0.4985352339979508
+lstm_2, cell_states, 82		 0.48276053426729537
+lstm_2, cell_states, 54		 0.47596042491406887
+lstm_2, cell_states, 144		 0.4683552173518527
+
+
+varco_V
+lstm_2, cell_states, 64		 0.31585891815269485
+lstm_2, outputs, 64		 0.3152343254749988
+lstm_2, cell_states, 49		 0.306683036442078
+lstm_2, cell_states, 36		 0.30545091782915135
+lstm_2, outputs, 51		 0.30107630490875653
+
+
+varco_C
+lstm_1, outputs, 3		 0.2932430510879917
+lstm_1, cell_states, 3		 0.29031834826730984
+lstm_1, outputs, 131		 0.25080252112755025
+lstm_1, cell_states, 131		 0.21140309775863725
+lstm_1, cell_states, 28		 0.19810116031030836
+
+
+nPVI_V
+lstm_2, outputs, 64		 0.46744099891837587
+lstm_2, cell_states, 64		 0.46557907564320145
+lstm_2, cell_states, 36		 0.44177625506277024
+lstm_2, cell_states, 89		 0.4181265438714806
+lstm_2, outputs, 89		 0.4161945234667573
+
+
+rPVI_C
+lstm_2, outputs, 112		 0.3986798974818543
+lstm_2, cell_states, 112		 0.36969689499742914
+lstm_2, cell_states, 3		 0.36293515195944276
+lstm_2, outputs, 3		 0.35342045425501745
+lstm_1, outputs, 140		 0.34561645628994847
+
+
