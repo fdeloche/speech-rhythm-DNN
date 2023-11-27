@@ -2,6 +2,8 @@ Code for *Acoustic characterization of speech rhythm:
 going beyond metrics with recurrent neural
 networks*, Deloche, Bonnasse-Gahot, Gervain 2024. Implements a RNN for a language-identification task based on speech envelopes (+F0, optional), used for identifying rhythmic features of languages.
 
+Also on zenodo: [![DOI](https://zenodo.org/badge/724213714.svg)](https://zenodo.org/doi/10.5281/zenodo.10211058)
+
 Contains :
 
 * Code for data processing
